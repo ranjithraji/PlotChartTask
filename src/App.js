@@ -5,7 +5,7 @@ import { FETCH } from "./service/utils/Fetch";
 
 export default function App() {
 
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [arrayX, setArrayX] = React.useState();
   const [arrayY, setArrayY] = React.useState();
   const [data, setData] = React.useState({
@@ -20,7 +20,6 @@ export default function App() {
   }, []);
 
   const fetchXdata = async () => {
-    setIsLoading(true);
     try {
       let response = await FETCH({
         url: `gDa8uC/data`,
