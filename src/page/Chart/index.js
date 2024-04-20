@@ -17,7 +17,7 @@ const Chart = () => {
   const fetchXdata = async () => {
     try {
       let response = await FETCH({
-        url: "https://retoolapi.dev/gDa8uC/data",
+        url: `/gDa8uC/data`,
         method: "GET",
         authenticate: false,
       });
@@ -36,7 +36,7 @@ const Chart = () => {
   const fetchYdata = async () => {
     try {
       let response = await FETCH({
-        url: "https://retoolapi.dev/o5zMs5/data",
+        url: "/o5zMs5/data",
         method: "GET",
         authenticate: false,
       });

@@ -1,4 +1,7 @@
 export const FETCH = async (options) => {
+  
+  const apiUrl = process.env.REACT_APP_API_URL;
+
     let token = localStorage.getItem("token");
     let response = {};
     let { url, method, body, authenticate = true, authToken } = options;
@@ -18,7 +21,7 @@ export const FETCH = async (options) => {
       requestOptions = { ...requestOptions, body: body };
     }
   
-    response = await fetch(url, requestOptions);
+    response = await fetch(apiUrl+url, requestOptions);
     if (response.ok) {
       return await response.json();
     }
