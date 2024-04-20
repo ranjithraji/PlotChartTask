@@ -5,13 +5,14 @@ export const FETCH = async (options) => {
   
     let headers = {
       "Content-Type": "application/json",
+      'Access-Control-Allow-Origin':'*'
     };
   
     if (authenticate) {
       headers = { ...headers, Authorization: authToken ?? token };
     }
   
-    let requestOptions = { method, headers };
+    let requestOptions = { method, headers ,mode: 'cors'};
   
     if (method === "POST" || method === "PUT") {
       requestOptions = { ...requestOptions, body: body };
